@@ -2,7 +2,7 @@ name: Build Cosmic ISOs
 on:
   push:
     tags:
-      - "*.*.*"
+      - "v*.*.*"
 
 env:
   IMAGE_REGISTRY: ghcr.io/kernelfreeze
@@ -23,6 +23,7 @@ jobs:
       matrix:
         image_name:
           [celestial-linux]
+        fedora_version: [40]
     env:
       IMAGE_TAG: latest
       IMAGE_REGISTRY: ghcr.io/kernelfreeze
@@ -88,7 +89,7 @@ jobs:
           image_repo: ${{ env.IMAGE_REGISTRY }}
           # We cannot use Silverblue variant since we need the user creation options in anaconda
           variant: "Kinoite"
-          version: ${{ github.ref_name }}
+          version: ${{ matrix.fedora_version }}
           image_tag: ${{ env.IMAGE_TAG }}
           secure_boot_key_url: "https://github.com/ublue-os/akmods/raw/main/certs/public_key.der"
           enrollment_password: "universalblue"
