@@ -1,6 +1,6 @@
 ARG SOURCE_IMAGE="cosmic"
 ARG SOURCE_SUFFIX="-nvidia"
-ARG SOURCE_TAG="latest"
+ARG SOURCE_TAG="latest-amd64"
 
 FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 
