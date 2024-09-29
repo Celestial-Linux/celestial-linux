@@ -1,5 +1,5 @@
 ---
-name: build-ublue-custom
+name: build-celestial-linux
 on:
   pull_request:
     branches:
@@ -7,6 +7,8 @@ on:
   schedule:
     - cron: '05 10 * * *'  # 10:05am UTC everyday
   push:
+    tags-ignore:
+      - "*.*.*"
     branches:
       - main
     paths-ignore:
