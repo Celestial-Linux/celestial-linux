@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
 
 env:
-  IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
+  IMAGE_REGISTRY: ghcr.io/kernelfreeze
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref || github.run_id }}
@@ -24,7 +24,7 @@ jobs:
         fedora_version: [40]
     env:
       IMAGE_TAG: latest
-      IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
+      IMAGE_REGISTRY: ghcr.io/kernelfreeze
 
     steps:
       - name: Checkout
