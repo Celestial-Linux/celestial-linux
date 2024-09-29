@@ -2,7 +2,7 @@ name: Build Cosmic ISOs
 on:
   push:
     tags:
-      - "v*.*.*"
+      - "*.*.*"
 
 env:
   IMAGE_REGISTRY: ghcr.io/kernelfreeze
